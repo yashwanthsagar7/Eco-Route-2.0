@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f1f5f9;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #059669;
+}
+
+/* Leaflet map styles matching light modern dashboard */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background-color: #e2e8f0 !important;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  border-radius: inherit;
+}
+
+.leaflet-dark-tiles {
+  filter: brightness(0.7) invert(1) contrast(0.9) hue-rotate(180deg) saturate(0.6);
+}
+
+.leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  padding: 0 !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.leaflet-popup-tip {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: #f8fafc !important;
+  color: #059669 !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: #64748b !important;
+  font-size: 10px !important;
+  backdrop-filter: blur(4px);
+}
+.leaflet-control-attribution a {
+  color: #059669 !important;
+}
+
+/* Pulsing beacon animation */
+@keyframes pulse-critical {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.3;
+  }
+}
+
+.pulse-beacon-red {
+  animation: pulse-critical 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Animated Route Line Flow */
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.animated-route-line {
+  stroke-dasharray: 8, 8;
+  animation: dash-flow 1.5s linear infinite;
+}

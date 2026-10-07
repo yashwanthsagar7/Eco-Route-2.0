@@ -1,0 +1,6 @@
+{
+  "name": "EcoRoute AI",
+  "description": "Smart city waste-management and sanitation planning platform with IoT sensor simulation, route optimization, Gemini vision waste scanning, citizen dumping reports, and AI sanitation intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
